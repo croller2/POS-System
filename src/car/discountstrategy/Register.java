@@ -12,12 +12,14 @@ package car.discountstrategy;
 public class Register {
 
     private Receipt receipt;
+    private DataStore dataStore;
+    private LineItem[] lineItem = new LineItem[0];
     public final void startNewSale(String custID, DataStore dataStore) {
         receipt = new Receipt(custID, dataStore);
     }
 
-    public final void addProductToSale(String productID, int qty) {
-        
+    public final void addProductToSale(String productID, int qty, DataStore dataStore) {
+       
     }
 
     public final void endSale() {

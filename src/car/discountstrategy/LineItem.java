@@ -9,6 +9,33 @@ package car.discountstrategy;
  *
  * @author chris
  */
-class LineItem {
+public class LineItem {
+    private Product product;
+    private int qty;
+
+    public LineItem(String prodID, int qty, DataStore dataStore) {
+        this.product = dataStore.findProdByID(prodID);
+        this.qty = qty;
+    }
+
+
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
     
+    
+            
 }

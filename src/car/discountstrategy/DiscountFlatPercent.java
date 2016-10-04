@@ -10,29 +10,25 @@ package car.discountstrategy;
  *
  * @author chris
  */
-public class DiscountFlatPercent implements Discount{
+public class DiscountFlatPercent implements DiscountStrategy{
     
-    private double discountPercent;
+    private double discountPercent = .10;
 
     public DiscountFlatPercent(double discountPercent) {
         this.discountPercent = discountPercent;
     }
 
-    @Override
     public final double getDiscountPercent() {
         return discountPercent;
     }
 
-    @Override
     public final void setDiscountPercent(double discountPercent) {
         this.discountPercent = discountPercent;
     }
     
     //Should this be calculated and returned as an amount off or a final price?
-    @Override
-    public final double calculateDiscount(ConcreteProduct product){
-        double price = product.getPrice()*(1- discountPercent);
+    public final double getDiscountAmt(double unitCost , int qty){
         
-        return price;
+        return unitCost * qty * discountPercent;
     }
 }

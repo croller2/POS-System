@@ -10,10 +10,10 @@ package car.discountstrategy;
  *
  * @author chris
  */
-public interface Discount {
+public interface DiscountStrategy {
 
     //Should this be calculated and returned as an amount off or a final price?
-    double calculateDiscount(ConcreteProduct product);
+    double getDiscountAmt(double unitCost , int qty);
 
     double getDiscountPercent();
 

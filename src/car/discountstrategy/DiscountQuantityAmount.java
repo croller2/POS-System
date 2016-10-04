@@ -9,21 +9,19 @@ package car.discountstrategy;
  *
  * @author chris
  */
-public class DiscountQuantityAmount implements Discount {
+public class DiscountQuantityAmount implements DiscountStrategy {
     
-    private double discountPercent;
-    private double minQty;
+    private double discountPercent = .10;
+    private double minQty = 5;
 
-    public DiscountQuantityAmount(double discountPercent, double minQty) {
-        this.discountPercent = discountPercent;
-        this.minQty = minQty;
-    }
     
-    
-    @Override
-    public final double calculateDiscount(ConcreteProduct product) {
-        double finalPrice = product.getPrice()*discountPercent;
-        return finalPrice; 
+  public final double getDiscountAmt(double unitCost , int qty){
+        
+       double discount = 0;
+       if(qty>= minQty){
+           discount = unitCost * qty * discountPercent;
+       }
+       return discount;
     }
 
     @Override

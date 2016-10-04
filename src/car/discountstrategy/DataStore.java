@@ -13,4 +13,5 @@ public interface DataStore {
 
     public Customer findCustByID(String custID);
     
+    public Product findProdByID(String prodID);
 }

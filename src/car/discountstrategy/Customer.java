@@ -45,6 +45,11 @@ class Customer {
     public final void setCustID(String custID) {
         this.custID = custID;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" + "firstName=" + firstName + ", lastName=" + lastName + ", custID=" + custID + '}';
+    }
     
     
 }

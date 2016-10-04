@@ -19,10 +19,10 @@ public class Driver {
         Register register = new Register();
         DataStore dataStore = new InMemoryDB();
         //Customer Number 1
-        register.startNewSale("C100" , dataStore);
-        register.addProductToSale("A101" , 2);
-        register.addProductToSale("B200" , 3);
-        register.addProductToSale("P400" , 1);
+        register.startNewSale("C101" , dataStore);
+        register.addProductToSale("A101" , 2 , dataStore);
+        register.addProductToSale("B200" , 3, dataStore);
+        register.addProductToSale("P400" , 1, dataStore);
         register.endSale();
     }
     
